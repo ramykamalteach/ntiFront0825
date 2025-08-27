@@ -1,0 +1,22 @@
+:root {
+    --borderColor: pink;
+    --borderWidth: 5px;
+    --titleFontSize: 66px;
+    --paragraphFontSize: 18px;
+}
+
+h3 {
+    color: blue;
+    font-size: var(--titleFontSize);
+    border-color: var(--borderColor);
+    border-width: var(--borderWidth);
+    border-style: double;
+}
+
+p {
+    color: green;
+    font-size: var(--paragraphFontSize);
+    border-color: var(--borderColor);
+    border-width: var(--borderWidth);
+    border-style: dashed;
+}

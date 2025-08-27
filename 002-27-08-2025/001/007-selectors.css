@@ -1,0 +1,11 @@
+
+ul:nth-child(2) li:nth-child(2) {
+    background-color: rgb(118, 18, 248);
+}
+
+.items div:nth-child(odd) {
+    background-color: lightcoral;
+}
+.items div:nth-child(even) {
+    background-color: lightgreen;
+}

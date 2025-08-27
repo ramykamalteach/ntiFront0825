@@ -1,0 +1,12 @@
+
+div p {
+    background-color: pink;
+}
+
+div p {
+    border: solid 5px red;
+}
+
+div > p {
+    padding: 30px;
+}

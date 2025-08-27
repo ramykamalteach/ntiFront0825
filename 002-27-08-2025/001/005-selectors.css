@@ -1,0 +1,44 @@
+input {
+    background-color: lightgreen;
+    border: 2px solid green;
+    padding: 5px;
+    margin: 7px;
+}
+
+input[type="text"] {
+    color: darkred;
+}
+
+h2[att-title="hi"] {
+    color: blue;
+    font-style: italic;
+}
+
+[att-title="welcome"] {
+    color: rgb(255, 0, 166);
+    text-decoration: underline;
+}
+
+/* a[href^="http"] {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+a[href$=".com"] {
+    color: purple;
+    font-size: 1.2em;
+}
+
+a[href*="example"] {
+    color: orange;
+    text-transform: uppercase;
+}
+
+a[href^="http"][href$=".com"] {
+    background-color: yellow;
+} */
+a[href^="http"]::after {
+    content: " (external link) ";
+    font-size: 0.8em;
+    color: red;
+}

@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: justify;
+}
+
+h2 {
+    color: blue;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.withBorder {
+    border: 5px double red;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: blueviolet;
+}
+
+#yellowBG {
+    background-color: yellow;
+}
+
+h1, .withBorder {
+    font-family: tahoma;
+}

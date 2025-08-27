@@ -1,0 +1,19 @@
+h1:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.papa {
+    background-color: lightblue;
+    padding: 20px;
+    border: 9px solid blue;
+}
+.papa:hover #c002 {
+    color: red;
+    font-size: 36px;
+}
+
+input:focus {
+    background-color: yellow;
+    border: 9px solid red;
+}

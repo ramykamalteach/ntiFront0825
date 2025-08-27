@@ -1,0 +1,7 @@
+/* h1 + p {
+    background-color: yellowgreen;
+} */
+
+h1 ~ p {
+    background-color: yellowgreen;
+}
