@@ -1,0 +1,29 @@
+/* Step 1: Define keyframes */
+    @keyframes bounce {
+        0%   { transform: translateX(0); }
+        50%  { transform: translateX(-250px); }
+        100% { transform: translateX(0); }
+    }
+
+    /* Step 2: Apply animation */
+    .ball {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 180px;
+        height: 180px;
+        background: tomato;
+        border-radius: 50%;
+        animation: bounce 3s ease-in-out infinite;
+    }
+
+    .ball01 {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        width: 180px;
+        height: 180px;
+        background: tomato;
+        border-radius: 50%;
+        animation: bounce 3s linear infinite;
+    }

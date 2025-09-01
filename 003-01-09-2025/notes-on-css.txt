@@ -1,0 +1,187 @@
+
+
+Colors in CSS :
+    1- Named Colors
+            https://www.w3schools.com/tags/ref_colornames.asp
+    2- Hexadecimal
+            0:F - FF=255 , 00=0 ------->  FF0000=red
+    3- RGB
+            rgb(r,g,b)    r,g,b : 0:255
+    4- RGBA
+            rgb(r,g,b,alpha)   alpha : 0:1
+    5- HSL
+            hue, saturation, lightness
+            h:0~360, s:0~100%,  L:0~100%
+    6- HSLA
+    7- CSS Variables
+    8- Gradients
+
+
+Background in CSS :
+    1- Background Color
+    2- Background Image
+    3- Background Repeat
+    4- Background Position
+    5- Background Size
+    6- Background Attachment
+            parallax
+    7- Background Gradient
+
+
+
+
+Units used in CSS
+    1- Absolute Units
+        px → pixels (most common)
+        pt → points (1pt = 1/72 inch, used in print)
+        cm → centimeters
+        mm → millimeters
+        in → inches
+        pc → picas (1pc = 12pt)
+
+    2- Relative Units
+        em → relative to the font-size of the element’s parent
+        rem → relative to the root (<html>) font-size
+        ex → relative to the x-height of the font (rare)
+        ch → relative to the width of the “0” character
+
+    3- Viewport-relative units
+        vw → 1% of viewport width
+        vh → 1% of viewport height
+        vmin → 1% of the smaller dimension (width/height)
+        vmax → 1% of the larger dimension
+
+
+    4- Percentage
+
+    *** For modern responsive design:
+            Use rem for fonts (scales consistently).
+            Use % / vw / vh for layouts.
+            Avoid too much px for flexibility.
+
+
+
+CSS Transition
+
+    transition: property duration timing-function delay;
+
+    Works best with pseudo-classes like :hover, :focus, :active
+
+
+
+CSS Animation
+
+    /* Step 1: Define keyframes */
+    @keyframes bounce {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-50px); }
+        100% { transform: translateY(0); }
+    }
+
+    /* Step 2: Apply animation */
+    .ball {
+        width: 80px;
+        height: 80px;
+        background: tomato;
+        border-radius: 50%;
+        animation: bounce 1s ease-in-out infinite;
+    }
+
+
+
+
+
+Font Family
+
+    1- Basic Font Family List
+    
+        font-family: "Helvetica Neue", Arial, sans-serif;
+
+    
+    2- Generic Font Families
+        serif → has strokes (e.g., Times New Roman)
+        sans-serif → clean (e.g., Arial)
+        monospace → fixed-width (e.g., Courier New)
+        cursive → handwriting-like
+        fantasy → decorative
+
+        font-family: serif;
+
+    3- Web-Safe Fonts (Pre-installed on most systems)
+        Arial
+        Verdana
+        Georgia
+        Times New Roman
+        Courier New
+
+
+    4- Google Fonts (or other CDN)
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        or
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+        font-family: "Roboto", sans-serif;
+
+    
+    5- @font-face (Custom Fonts)
+
+        @font-face {
+        font-family: "MyCustomFont";
+        src: url("fonts/MyCustomFont.woff2") format("woff2"),
+            url("fonts/MyCustomFont.woff") format("woff");
+        }
+
+        p {
+        font-family: "MyCustomFont", sans-serif;
+        }
+
+
+        or
+
+        @font-face {
+        font-family: "MyFont";
+        src: url("myfont.woff2") format("woff2"),
+            url("myfont.woff") format("woff"),
+            url("myfont.ttf") format("truetype"),
+            url("myfont.otf") format("opentype"),
+            url("myfont.eot") format("embedded-opentype"),
+            url("myfont.svg#MyFont") format("svg");
+        }
+
+
+
+
+
+Font properties
+
+        font-style → normal | italic | oblique
+        font-weight → normal | bold | lighter | bolder | 100–900
+        font-size → e.g., 16px, 1em, 120%
+        font-variant → normal | small-caps
+        font-variant-caps → small-caps, all-small-caps
+
+        font (shorthand)
+
+
+Text properties
+
+        text-align → horizontal alignment (left, right, center, justify)
+        
+        text-decoration → shorthand for line, style, color, thickness.
+        text-decoration-line → underline, overline, line-through, none.
+        text-decoration-style → solid, double, dotted, dashed, wavy.
+        text-decoration-color → sets decoration color.
+        text-decoration-thickness → thickness of line.
+
+        text-shadow → shadow effect.
+
+
+
+--------------------------------------------------------------------------------
+
+Make a good format page from this CV
+
+    https://www.figma.com/design/Zp7NpovObpG9tNeVFFEPHO/Front-end-CV--Community-?node-id=0-1&p=f&t=DtZ2p6RoWCedsDUG-0
+
+    

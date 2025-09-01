@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css');
+
+
+@font-face {
+    font-family: "myTitlesInArabic";
+    src: url("Kalema.ttf") format("truetype");
+}
+
+.ar02 {
+    font-size: 94px;
+    font-family: "myTitlesInArabic";
+}
+
+
+
+
+.ar01 {
+    font-size: 64px;
+    font-family: 'Oi', cursive;
+}
+
+.f01 {
+    font-size: 64px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.f02 {
+    font-size: 64px;
+    /* font-family: "Bauhaus 93"; */
+    font-family: fantasy;
+}
+
+
+.icons {
+    display: flex; justify-content: space-around; align-items: center;
+    color: red;
+    font-size: 64px;
+}
