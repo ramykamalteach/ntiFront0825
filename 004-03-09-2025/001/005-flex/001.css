@@ -1,0 +1,31 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 0; padding: 0;
+}
+
+.container {
+    /* margin: 0 auto;
+    width: 70vw; */
+    background-color: #444;
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items:stretch;
+    align-content: center;
+    row-gap: 55px;
+}
+
+.container > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 21%;
+    height: 150px;
+    /* margin: 55px; */
+    font-size: 33px;
+    border: 1px solid white;
+    background-color: green;
+}

@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+    /* text-decoration-line: line-through;
+    text-decoration-color: red;
+    text-decoration-style: double;
+    text-decoration-thickness: 5px; */
+    /* text-decoration: underline overline wavy 2px blue; */
+
+    text-shadow: 11px 33px 0 red;
+}
+
+p {
+    text-align: justify;
+}
+
+a {
+    color: green;
+    background-color: black;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+    background-color: black;
+    text-decoration: underline;
+}

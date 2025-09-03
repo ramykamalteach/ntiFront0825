@@ -164,17 +164,7 @@ Font properties
         font (shorthand)
 
 
-Text properties
 
-        text-align → horizontal alignment (left, right, center, justify)
-        
-        text-decoration → shorthand for line, style, color, thickness.
-        text-decoration-line → underline, overline, line-through, none.
-        text-decoration-style → solid, double, dotted, dashed, wavy.
-        text-decoration-color → sets decoration color.
-        text-decoration-thickness → thickness of line.
-
-        text-shadow → shadow effect.
 
 
 

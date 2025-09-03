@@ -1,0 +1,59 @@
+
+
+CSS Text properties
+
+        text-align → horizontal alignment (left, right, center, justify)
+        
+        text-decoration → shorthand for line, style, color, thickness.
+        text-decoration-line → underline, overline, line-through, none.
+        text-decoration-style → solid, double, dotted, dashed, wavy.
+        text-decoration-color → sets decoration color.
+        text-decoration-thickness → thickness of line.
+
+        text-shadow → shadow effect.
+
+
+CSS box properties:
+
+        width, height
+        padding, padding-top, padding-right, padding-bottom, padding-left
+        border, border-width, border-style, border-color
+        margin, margin-top, margin-right, margin-bottom, margin-left
+        box-shadow
+
+
+Layout in CSS
+
+1- element position :
+        Static: The default, an element is positioned in the normal document flow.
+        Relative: An element stays in flow but can be offset from its original position.
+        Absolute: An element is removed from flow and positioned relative to its nearest positioned ancestor.
+        Fixed: An element is removed from flow and positioned relative to the viewport, staying in place on scroll.
+        Sticky: An element is treated as relative until a specific scroll point is met, at which point it becomes fixed.
+        z-index : layer order
+
+
+2- Float :
+        float : right, left
+        clear : right, left, both
+
+3- Flexbox :
+        display: flex;
+        flex-direction: Defines the direction of the main axis (row or column).
+        flex-wrap: Specifies whether flex items should wrap onto multiple lines.
+        justify-content: Aligns items along the main axis.
+        align-items: Aligns items along the cross axis.
+        align-content: Aligns lines of items when there is wrapping.
+        gap, row-gap, column-gap: Sets the spacing between flex items.
+
+4- grid :
+        display: grid;
+        grid-column-start, grid-column-end, grid-row-start, grid-row-end
+        grid-column: 1 / span 2; grid-row: 1 / span 2;
+        grid-area: 1 / 2 / 3 / 2;
+        grid-area: myArea;
+        grid-template-areas: 'myArea myArea myArea myArea myArea';
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: auto auto auto auto;
+        grid-template-columns: 80px 200px auto 40px;
+

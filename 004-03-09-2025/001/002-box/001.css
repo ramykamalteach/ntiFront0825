@@ -1,0 +1,30 @@
+body {
+    background-color: black;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    box-sizing: border-box;
+    background-color: #343434;
+    width: 40%;
+    /* height: 100px;
+    overflow: auto; */
+    padding: 10px 50px;
+    margin: 0 auto;
+    text-align: justify;
+    border-radius: 33px;
+}
+
+h1 {
+    width: 40%;
+    background-color: #343434;
+    border: red double 12px;
+    border-bottom: green dashed 14px;
+}
+
+img {
+    border-radius: 50%;
+    box-shadow: 5px -5px 55px rgb(240, 213, 213);
+}

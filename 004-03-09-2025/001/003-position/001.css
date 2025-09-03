@@ -1,0 +1,66 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: darkgreen;
+}
+
+#h01 {
+    width: 200px;
+    height: 120px;
+    position: relative;
+    top: 100px;
+}
+
+.parent {
+    width: 600px;
+    height: 300px;
+    background-color: darkblue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.child {
+    width: 200px;
+    height: 150px;
+    background-color: darkred;
+    position: absolute;
+    top: 50px;
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(1, 66, 94);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+#upToTop {
+    width: 50px;
+    height: 50px;
+    background-color: darkorange;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    color: rgb(50, 2, 2);
+    cursor: pointer;
+}
+
+#tableHeader {
+    display: flex;
+    position: sticky;
+    top: 100px;
+    height: 100px;
+    background-color: darkcyan;
+}

@@ -1,0 +1,25 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    float: left;
+    background-color: #444;    
+}
+
+.container div{
+    float: right;
+    width: 300px;
+    height: 400px;
+    margin: 30px;
+    background-color: rgb(0, 133, 177);
+    font-size: 36px;
+}
+
+.container02 {
+    float: left;
+    background-color: brown;
+}
