@@ -1,0 +1,58 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {    
+    --text-color: #333;
+    --light-text-color: #777;
+    --text-hover-color: #ec1d25;
+    --mainFont: 'Montserrat', sans-serif;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--mainFont);
+}
+#pageMenu {
+    width: 100%;
+    height: 115px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    border-top: 5px var(--text-hover-color) solid;
+}
+nav {
+    width: 80%;
+    margin: 0 auto;
+    height: 115px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#mainMenu, #pageMenuSocialIcons, #pageMenuSideMenu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+#mainMenu {
+    text-transform: uppercase;
+}
+
+nav a {    
+    text-decoration: none;
+    font-family: var(--mainFont);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-color);
+    transition: all 0.5s ease;
+}
+
+nav a:hover {
+    color: var(--text-hover-color);
+    transition: all 0.5s ease;
+}
