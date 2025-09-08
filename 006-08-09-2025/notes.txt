@@ -1,0 +1,22 @@
+
+
+Responsive design in CSS means making your website or web application automatically adapt to different screen sizes, resolutions, and devices (like desktops, tablets, and smartphones) so that users always get the best viewing and interaction experience.
+
+Responsive design in CSS makes your website flexible and user-friendly across devices by combining relative units, fluid grids, flexible media, and media queries.
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+Element in Responsive design :
+  - ratio of width
+  - hide / display elements
+  - Rearrange elements
+
+
+https://getbootstrap.com/docs/5.0/layout/breakpoints/
+
