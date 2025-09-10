@@ -9,7 +9,7 @@
 
 :root {
     --bg-color: #121212;
-    --text-color: #ffffff;
+    --text-color: #959595;
     --accent-color: #FD6F00;
 }
 
@@ -26,9 +26,16 @@ nav {
     justify-content: space-around;
     align-items: center;
     position: fixed;
-    top: 0;
+    top: 30px;
     left: 0;
     background: none;
+}
+
+nav .logo {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul {
@@ -40,15 +47,68 @@ nav ul {
 }
 
 nav ul li a{
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: medium;
     cursor: pointer;
     color: var(--text-color);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
+.active-link {
+    color: var(--accent-color);
+}
+
+nav ul {
+    width: 40%;
+}
+
 nav ul li a:hover {
     color: var(--accent-color);
     transition: all 0.3s ease;
+}
+
+nav .hire-me {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+nav .hire-me a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: medium;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border-radius: 8px;
+    width: 160px;
+    padding: 10px 35px;
+    transition: all 0.3s ease;
+}
+nav .hire-me a:hover {
+    background-color: #ffffff;
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+
+/* ------------------------------------------- */
+
+.hi {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10%;
+}
+.hi .info {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
 }
