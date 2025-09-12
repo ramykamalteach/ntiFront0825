@@ -1,0 +1,42 @@
+
+:root {
+    --title-color: white;
+    --title-color-hover: red;
+}
+
+
+.navbar {
+    padding: 15px 10%;
+    background: none !important;
+    border-top: 5px solid var(--title-color-hover);
+}
+
+.navbar > .container-fluid > a {
+    width: 10%;
+}
+
+.navbar .container-fluid > .navbar-collapse ul:nth-child(1) {
+    width: 90%;
+    justify-content: space-evenly;
+}
+
+.navbar .nav-link {
+    color: var(--title-color) !important;
+}
+.navbar .nav-link:hover {
+    color: var(--title-color-hover) !important;
+}
+.navbar .active {
+    font-weight: bold;
+}
+.navbar .active:hover {
+    color: var(--title-color) !important;
+}
+
+
+/* -------------------------------- */
+
+#carouselExampleCaptions {
+    height: 100vh !important;
+    overflow: hidden;
+}
