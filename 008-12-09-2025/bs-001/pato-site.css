@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 :root {
     --title-color: white;
@@ -39,4 +41,55 @@
 #carouselExampleCaptions {
     height: 100vh !important;
     overflow: hidden;
+}
+
+.carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-caption h5 {
+    font-size: 64px;
+    font-family: "Courgette" !important;
+}
+
+.carousel-caption p {
+    font-size: 88px;
+    font-weight: 700;
+    font-family: "Poppins" !important;
+    text-transform: uppercase !important;
+}
+
+.carousel-caption .btn-danger {
+    background-color: var(--title-color);
+    color: var(--title-color-hover);
+    font-family: "poppins";
+    text-transform: uppercase !important;
+    font-size: 14px;
+    border: none;
+    padding: 8px 32px;
+    border-radius: 8px;
+    transition: all 200ms ease-in-out;
+}
+.carousel-caption .btn-danger:hover {
+    background-color: var(--title-color-hover);
+    color: var(--title-color);
+    transition: all 200ms ease-in-out;
+}
+
+
+.carousel-indicators {
+    bottom: 5%;
+}
+
+.carousel-indicators button {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50%;
+}
+
+.carousel-indicators button.active {
+    border: red 2px solid;
+    transform: translateY(30%);
+    box-sizing: content-box;
 }
