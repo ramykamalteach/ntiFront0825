@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bs5.css">
+    <style>
+        .container {
+            border: red solid 3px;
+        }
+
+        .row {
+            border: green solid 5px;
+        }
+
+        .col-md,
+        .row>div,
+        .grid>div {
+            border: pink solid 5px;
+            height: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="g-col-6 g-col-md-6">11</div>
+            <div class="g-col-6 g-col-md-6">22</div>
+            <div class="g-col-6 g-col-md-6">33</div>
+        </div>
+
+        <div class="row gx-5 d-flex justify-content-center align-items-center">
+            <div class="col-md-8 col-sm-6">1</div>
+            <div class="col-md-2 col-sm-6" style="height: 200px;">2</div>
+            <div class="col-md-2 col-sm-6">33333</div>
+        </div>
+
+    </div>
+
+
+    <script src="bs5.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+Forms in Bootstrap :
+    - Forms in Bootstrap use the <form> element along with classes like:
+        .form-control → for inputs, textareas, selects
+        .form-label → for labels
+        .form-check → for checkboxes and radios
+        .form-select → for dropdowns
+
+    - Form Layouts
+    - Horizontal Forms
+    - Checkboxes & Radios
+    - Select Menus
+    - Input Groups
+    - Validation Styles
+    - Floating Labels
+    
+
+--------------------------------------------------------------------------------
+
+Grid System
+    Bootstrap uses a 12-column responsive grid system based on Flexbox.
+        - Containers
+            .container → fixed-width, responsive at breakpoints
+            .container-fluid → 100% width always
+
+        - rows
+            .row to create horizontal groups.
+
+        - Responsive Breakpoints (colunms)
+            Bootstrap layouts adapt across devices using breakpoints:
+                .col- → Extra small (default, <576px)
+                .col-sm- → Small (≥576px)
+                .col-md- → Medium (≥768px)
+                .col-lg- → Large (≥992px)
+                .col-xl- → Extra large (≥1200px)
+                .col-xxl- → Extra extra large (≥1400px)
+
+        - Flexbox Utilities
+            Bootstrap provides flex utilities for alignment and layout tweaks:
+                d-flex, justify-content-center, align-items-center, etc.
+                Helps align content without writing custom CSS.
+
+                    <div class="d-flex justify-content-between">
+                        <div>Left</div>
+                        <div>Right</div>
+                    </div>
+
+
+----------------------------------------------------
+
+Bootstrap RTL
+        https://getbootstrap.com/docs/5.0/getting-started/rtl/
+
+
+----------------------------------------------------
+
+Bootstrap UI snippets
+
+Bootstrap Template
+
