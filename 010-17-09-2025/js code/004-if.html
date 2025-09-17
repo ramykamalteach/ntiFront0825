@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* let x = 49;
+        if(x >= 50) {
+            console.log("you passed");
+        }
+        else {
+            console.log("you failed");
+        } */
+
+        /* let term1 = 5;
+        let term2 = 11;
+
+        if(!(term1 >= 50 || term2 >= 50)) {
+            console.log("you passed");
+        }
+        else {
+            console.log("you failed");
+        } */
+
+
+        /* for(let x = 7; x <= 1000; x += 7) {
+            if(x % 2 == 1 && x % 3 == 1 && x % 4 == 1 && x % 5 == 1 && x % 6 == 1) {
+                console.log(x);
+            }
+        } */
+
+
+        // 100 ====  7, 11, 17
+
+        for(let x = 1; x <= 10; x++) {
+            for(let y = 1; y <= 6; y++) {
+                for(let z = 1; z <= 4; z++) {
+                    let total = x * 7 + y * 11 + z * 17;
+                    if(total == 100) {
+                        console.log(x, y, z);
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

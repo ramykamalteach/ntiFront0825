@@ -1,0 +1,55 @@
+What is JavaScript?
+    - It is one of the core technologies of the web, alongside HTML (structure) and CSS (style).
+    - It runs inside the browser (client-side), although it can also run on servers using environments like Node.js.
+    - It is event-driven, meaning it reacts to user actions such as clicks, typing, or scrolling.
+
+Why is JavaScript used in Web Development?
+    - Interactivity
+    - DOM Manipulation
+    - Form Validation
+    - Asynchronous Communication (AJAX, Fetch API)
+    - Full-Stack Development
+    - Rich Ecosystem
+    - Cross-Platform
+
+------------------------------------------------------------------------
+
+Write JS in :
+    - external file *.js
+        - <script src="fileName.js"></script>
+    - in html file
+        <script> .... code ... </script>
+    - in html tag 
+        <tagName eventType="... code ...">
+
+---------------------------------------------------------------------
+
+Variables :
+    x = 123;
+    itemPrice = 99.77; // number
+    userName = "Reda Saleh";  // string
+    hasDriveLiciene = true;     // boolean
+    nationalNumber = null;  // null
+
+    var x;
+    let x;
+    var x = 987;
+    let x = 543.333;
+
+-------------
+
+Conditions :
+
+if(condition) {
+    condition is true
+}
+else {
+    condition is false
+}
+
+simple condition : 
+    Variable logic_operator Variable OR value
+    logic_operator :    ==   <   >    <=   >=    !=
+    
+complex condition :
+    and && or || not !
