@@ -1,0 +1,50 @@
+oop in js
+
+class student {
+    constructor (name, degree) {
+        this.name = name;
+        this.degree = degree;
+    }
+    isPass () {
+        if(this.degree >= 50) {
+            return "pass";
+        }
+        else {
+            return "failed";
+        }
+    }
+}
+
+const osama = new student("osama ahmed", 50);
+
+
+---------------------------------------------------------
+
+
+Events
+
+
+---------------------------------------------------------
+
+
+Selectors
+
+    - getElementById
+    - querySelector
+
+    - getElementsByTagName
+    - getElementsByClassName
+    - querySelectorAll
+
+
+
+---------------------------------------------------------
+
+
+addEventListener
+
+
+
+--------------------------------------------------------------
+
+

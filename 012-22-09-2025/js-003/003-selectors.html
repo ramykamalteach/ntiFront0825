@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="item">item 01</li>
+        <li class="item">item 02</li>
+        <li class="item">item 03</li>
+    </ul>
+
+    <button onclick="clearStore();">
+        clear store
+    </button>
+
+
+    <h1 id="g01">
+        hello everybody
+    </h1>
+    <h1>
+        hello everybody
+    </h1>
+    <h1>
+        hello everybody
+    </h1>
+
+    <button onclick="greet();">change greeting</button>
+
+    <script>
+        function clearStore() {
+            let items = document.querySelectorAll(".item");
+            /* let items = document.getElementsByClassName("item"); */
+            /* let items = document.getElementsByTagName("li"); */
+            for(let i = 0; i < items.length; i++) {
+                items[i].innerHTML = "this item not available now !!!";
+            }
+        }
+
+
+        function greet() {
+            document.querySelector("h1").innerHTML = "Good morning";
+            /* document.querySelector("#g01").innerHTML = "Good morning"; */
+            /* document.getElementById("g01").innerHTML = "Good morning"; */
+        }
+    </script>
+</body>
+</html>

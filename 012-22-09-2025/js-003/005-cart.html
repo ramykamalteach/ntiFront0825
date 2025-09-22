@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        cart
+    </h1>
+    <table width="77%" align="center" border="1">
+        <tr>
+            <th>Item name</th>
+            <th>price</th>
+            <th>tax</th>
+            <th>net price</th>
+        </tr>
+        <tr>
+            <th>T-shirt</th>
+            <th class="price">100</th>
+            <th><input type="number" value="10" class="tax"></th>
+            <th class="net">---------------</th>
+        </tr>
+        <tr>
+            <th>Watch</th>
+            <th class="price">1000</th>
+            <th><input type="number" value="100" class="tax"></th>
+            <th class="net">---------------</th>
+        </tr>
+        <tr>
+            <th>Shoes</th>
+            <th class="price">200</th>
+            <th><input type="number" value="20" class="tax"></th>
+            <th class="net">---------------</th>
+        </tr>
+
+        <tr>
+            <th colspan="3">Total </th>
+            <th id="total">---------------</th>
+        </tr>
+    </table>
+
+
+    <script>
+        let taxes = document.querySelectorAll(".tax");
+        let prices = document.querySelectorAll(".price");
+        let nets = document.querySelectorAll(".net");
+
+        window.addEventListener("load", () => {
+            for(let i = 0; i < taxes.length; i++) {
+                calcNetPrice(i);
+            }            
+        });
+
+        for(let i = 0; i < taxes.length; i++) {
+            taxes[i].addEventListener("change", ()=> {
+                calcNetPrice(i);
+            });
+            taxes[i].addEventListener("keyup", ()=> {
+                calcNetPrice(i);
+            });
+        }
+
+        function calcNetPrice(i) {
+            nets[i].innerHTML = parseFloat(prices[i].innerHTML) + parseFloat(taxes[i].value);
+            let cartTotal = 0;
+            for(let t = 0; t < nets.length; t++) {
+                cartTotal += parseFloat(nets[t].innerHTML);
+            }
+            document.querySelector("#total").innerHTML = cartTotal;
+        }
+    </script>
+</body>
+
+</html>

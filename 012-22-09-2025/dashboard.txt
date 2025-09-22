@@ -1,0 +1,11 @@
+Dashboard :
+    CRUD (create - read - update - delete)
+
+    - first page : show all objects (pagination)
+    - show details : show one object details
+    - update object : form for object update
+    - create object : form for create new object
+
+Pato Home page dashboard :
+    - banner
+    

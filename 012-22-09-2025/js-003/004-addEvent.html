@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Hello !!
+    </h1>
+    <button id="bt">Change Greeeting</button>
+
+    <script>
+        document.querySelector("#bt").addEventListener("mouseover", () => {
+            document.querySelector("h1").innerHTML = "Good Night";
+        });
+        /* document.querySelector("#bt").addEventListener("click", function(){
+            document.querySelector("h1").innerHTML = "Good Night";
+        }); */
+    </script>
+</body>
+</html>
