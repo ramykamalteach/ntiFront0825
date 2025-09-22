@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* let today = new Date("9-21-2025");
+
+        console.log(today.getDay());
+        console.log(today.getMonth());
+        console.log(today.getDate());
+        console.log(today.getFullYear()); */
+
+        // اليوم الجمعة 21 من سبتمبر لعام 2025
+
+
+        console.log(arabicCalender("9-20-2025"));
+
+        function arabicCalender(day) {
+            let arabicDayName = [
+                "الأحد", "الأثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"
+            ];
+            let arabicMonthName = [
+                "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
+            ];
+            
+            let today = new Date(day);
+            let dayNameInArabic = arabicDayName[today.getDay()];
+            let monthNameInArabic = arabicMonthName[today.getMonth()];
+
+            let result = 
+                "اليوم " +
+                dayNameInArabic + " " +
+                today.getDate() + " " +
+                "من " +
+                monthNameInArabic + " " +
+                "لعام " +
+                today.getFullYear();
+
+            return result;
+        }
+
+    </script>
+</body>
+</html>

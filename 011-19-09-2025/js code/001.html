@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let students = [
+            {
+                name: "hany reda",
+                materials: [
+                    "math", "science", "arabic"
+                ]
+            },
+            {
+                name: "samer tamer",
+                materials: [
+                    "algabric", "physics", "english"
+                ]
+            },
+        ];
+
+        console.log(students[1].materials[1]);
+
+        for(let std = 0; std < students.length; std++) {
+            console.log(students[std].name);
+            for(let mat = 0; mat < students[std].materials.length; mat++) {
+                console.log(" - ", students[std].materials[mat]);
+            }
+        }
+
+
+        /* let emps = [
+            {name: "osama", age: 33, address: "tanta"},
+            {name: "samy", age: 44, address: "cairo"},
+            {name: "hany", age: 55, address: "alex"},
+        ];
+
+        console.log("address of osama", emps[0].address);
+        console.log("age of hany", emps[2].age); */
+
+        /* let x = {
+            name : "Ali",
+            age : 33,
+            isActive : true,
+            address : "cairo"
+        };
+
+        console.log(x.name, x.address); */
+
+
+        /* let str = "waled mohamed, fathy farouk, ashrf rashad, ayman ali, emad samer";
+
+        let arr = str.split(", ");
+
+        for(let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        } */
+
+        //console.log(arr);
+
+
+
+        /* let prices = [40, 30, 50, 100, 20];
+        let greatestNumber = prices[0];
+        for(let i = 1; i < prices.length; i++) {
+            if(prices[i] > greatestNumber) {
+                greatestNumber = prices[i];
+            }
+        }
+        console.log(greatestNumber); */
+
+
+
+        /* let sum = 0;
+        for(let i = 0; i < prices.length; i++) {
+            sum += prices[i];
+        }
+        console.log(sum); */
+
+
+        /* let x = ["ali", "basem", "ziad"];
+
+        for(let i = 0; i < x.length; i++) {
+            console.log(x[i]);
+        } */
+
+
+        /* let x = ["ali", "basem", "ziad"]; */
+        /* let x = Array("ali", "basem", "ziad"); */
+        /* x[9] = 123; */
+        /* console.log(x[0]); */
+        /* console.log(x.length); */
+    </script>
+</body>
+</html>

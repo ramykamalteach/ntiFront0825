@@ -1,0 +1,17 @@
+Arrarys
+    let x = ["ali", "basem", "ziad"];
+    x[9] = 123;
+    console.log(x[0]);
+    console.log(x.length);
+    for(let i = 0; i < x.length; i++) {
+        console.log(x[i]);
+    }
+    let x = {
+            name : "Ali",
+            age : 33,
+            isActive : true,
+            address : "cairo"
+        };
+    console.log(x.name, x.address);
+
+

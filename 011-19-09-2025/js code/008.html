@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = "    awelcome to our clAss, greet the ClaSs    ";
+        console.log(x.trim());
+        
+        console.log(x);
+
+        /* let result = x.match(/^welcome/ig); */
+        let result = x.match(/class$/ig);
+
+        console.log(result? "valid" : "not valid");
+
+        /* let x = "welcome to our clAss, greet the ClaSs";
+
+        let result = x.search(/class/ig); */
+
+        /* let result = x.replace(/class/ig, "home"); */
+
+        /* console.log(result); */
+
+        /* let result = x.match(/cOm/i);
+        if(result){
+            console.log("valid");
+        }
+        else {
+            console.log("not valid");
+        } */
+    </script>
+</body>
+</html>
