@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tasks div {
+            border: solid salmon 5px;
+            border-radius: 4px;
+            margin: 16px;
+            padding: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="taskText" type="text">
+    <button onclick="addTask()">Add Task</button>
+    <div id="tasks"></div>
+
+    <script>
+        document.querySelector("#taskText").addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                addTask();
+            }
+        });
+
+
+        function addTask() {
+            taskText = document.querySelector("#taskText").value;
+            document.querySelector("#taskText").value = "";
+
+            let oneTask = document.createElement("div");
+            oneTask.innerHTML = taskText;
+            let deleteButton = document.createElement("button");
+            deleteButton.innerHTML = "Delete";
+            deleteButton.onclick = () => {
+                oneTask.remove();
+            }
+            oneTask.append(deleteButton);
+
+            document.querySelector("#tasks").append(oneTask);
+        }
+    </script>
+</body>
+
+</html>

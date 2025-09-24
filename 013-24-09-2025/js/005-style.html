@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mytitle {
+            border: 5px solid red;
+            width: 55%;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="mytitle">
+        hello
+    </h1>
+    <button onclick="fn()">Change Style</button>
+
+    <script>
+        function fn() {
+            document.querySelector("h1").classList.remove("mytitle");
+            /* document.querySelector("h1").classList.add("mytitle"); */
+
+            /* document.querySelector("h1").style.backgroundColor = "pink";
+            document.querySelector("h1").style.fontSize = "16px"; */
+        }
+    </script>
+</body>
+</html>
