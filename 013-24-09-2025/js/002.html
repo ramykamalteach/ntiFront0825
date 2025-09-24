@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <button onclick="changeGreet()">Click me</button>
+
+    <ul id="students"></ul>
+    <button onclick="std()">Display Pass Students</button>
+    <br><br><br>
+    <button onclick="clearList()">Clear Students List</button>
+
+    <script>
+        function clearList() {
+            document.querySelector("#students").innerHTML = "";
+        }
+        function std() {
+            students = ["osama hany", "Saad Reda", "Yousef Ahmed"];
+            let myTags = "";
+            for(let i = 0; i < students.length; i++) {
+                myTags += "<li>" + students[i] + "</li>";
+            }
+            document.querySelector("#students").innerHTML = myTags;
+        }
+
+
+        function changeGreet() {
+            /* document.querySelector("h1").innerHTML = "<i>Good Night</i>"; */
+            document.querySelector("h1").innerText = "<i>Good Night</i>";
+        }
+    </script>
+</body>
+</html>

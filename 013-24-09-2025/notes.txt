@@ -1,0 +1,13 @@
+JS control html
+    - innerText , innerHTML 
+    - setAttribute
+    - createElement / append
+    
+    ex: todo list : <input>, <button>, list < task , each task has clear button
+    
+
+JS control CSS
+    - style
+    - classList.add, classList.remove
+
+    ex: Modal

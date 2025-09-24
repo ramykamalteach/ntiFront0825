@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="changeImage()">Change Image</button>
+    <br><br>
+    <button onclick="swapImage()">Swap Image</button>
+    <br><br><br>
+
+    <button onclick="prev()">Previous</button>
+    <img id="avatar" src="img/avatar-01.jpg" width="555" alt="">
+    <button onclick="next()">Next</button>
+
+    <script>
+        images = ["img/avatar-01.jpg", "img/avatar-03.jpg", "img/avatar-04.jpg", "img/avatar-05.jpg"];
+
+        currentImageIndex = 0;
+
+        function prev() {
+            currentImageIndex --;
+            if(currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            }
+            document.querySelector("#avatar").setAttribute("src", images[currentImageIndex]);
+        }
+        function next() {
+            currentImageIndex ++;
+            if(currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+            document.querySelector("#avatar").setAttribute("src", images[currentImageIndex]);
+        }
+
+
+
+        function changeImage() {
+            document.querySelector("#avatar").setAttribute("src", "img/avatar-03.jpg");
+        }
+
+        function swapImage() {
+            if(document.querySelector("#avatar").getAttribute("src") == "img/avatar-01.jpg") {
+                document.querySelector("#avatar").setAttribute("src", "img/avatar-03.jpg");
+            }
+            else {
+                document.querySelector("#avatar").setAttribute("src", "img/avatar-01.jpg");
+            }
+        }
+    </script>
+</body>
+</html>
