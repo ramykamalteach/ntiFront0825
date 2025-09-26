@@ -1,0 +1,14 @@
+
+:root {
+    --textColor: blue;
+    --bgColor: lightblue;
+}
+
+body {
+    color: var(--textColor);
+    background-color: var(--bgColor);
+}
+
+a {
+    cursor: pointer;
+}

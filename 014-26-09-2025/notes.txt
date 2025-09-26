@@ -1,0 +1,5 @@
+Js :
+    - photo Gallary
+    - local storage
+    - dark mode
+    

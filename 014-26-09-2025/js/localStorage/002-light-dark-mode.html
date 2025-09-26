@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="002-light-dark-mode.css">
+</head>
+
+<body>
+    <a onclick="changeMode(this)">Dark Mode</a>
+
+    <h1>This is my Title of page</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum pariatur ad consequuntur maiores id nisi
+        asperiores quaerat possimus reprehenderit. At nam cupiditate eveniet illum commodi tempora, earum blanditiis
+        nesciunt laudantium. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam esse vero nostrum quia,
+        nulla veritatis quisquam distinctio porro perspiciatis aspernatur saepe quas exercitationem maiores minus
+        temporibus illum eveniet molestias quod!</p>
+
+    <br><br><br>
+
+    <footer>
+        <h4>copyrights &copy; 2025</h4>
+    </footer>
+
+    <script>
+        window.onload = () => {
+            console.log(window.localStorage.getItem("colorMode"));
+            if (window.localStorage.getItem("colorMode") == "Light Mode") {                
+                document.querySelector("a").innerText = "Dark Mode";
+                document.querySelector(":root").style.setProperty('--textColor', 'blue');
+                document.querySelector(":root").style.setProperty('--bgColor', 'lightblue');
+            }
+            else {
+                window.localStorage.setItem("colorMode", "Dark Mode");
+                document.querySelector("a").innerText = "Light Mode";
+                document.querySelector(":root").style.setProperty('--textColor', 'pink');
+                document.querySelector(":root").style.setProperty('--bgColor', 'black');
+            }
+        };
+
+        function changeMode(x) {
+            if (x.innerText == "Light Mode") {
+                window.localStorage.setItem("colorMode", "Light Mode");
+                x.innerText = "Dark Mode";
+                document.querySelector(":root").style.setProperty('--textColor', 'blue');
+                document.querySelector(":root").style.setProperty('--bgColor', 'lightblue');
+            }
+            else {
+                window.localStorage.setItem("colorMode", "Dark Mode");
+                x.innerText = "Light Mode";
+                document.querySelector(":root").style.setProperty('--textColor', 'pink');
+                document.querySelector(":root").style.setProperty('--bgColor', 'black');
+            }
+        }
+    </script>
+</body>
+
+</html>

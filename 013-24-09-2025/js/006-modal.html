@@ -9,16 +9,18 @@
         pre {
             font-size: 48px;
         }
+
         .transparentBg {
             display: none;
             background-color: black;
-            opacity: 0.7;
+            opacity: 0;
             width: 100vw;
             height: 100vh;
             position: fixed;
             top: 0;
             left: 0;
         }
+
         .modalPhoto {
             display: none;
             border: 9px solid red;
@@ -35,6 +37,35 @@
             display: block !important;
             opacity: 0.1 !important;
             transition: all 5.5s ease-in-out !important;
+        }
+
+        .slideFromRight {
+            animation-name: slideFromRightAnimation;
+            animation-duration: 0.5s;
+        }
+
+        @keyframes slideFromRightAnimation {
+            from {
+                transform: translate(100vw, -50%)  scale(0.01);
+            }
+
+            to {
+                transform: translateX(0, 0)  scale(1);
+            }
+        }
+        .slideToRight {
+            animation-name: slideToRightAnimation;
+            animation-duration: 0.7s;
+        }
+
+        @keyframes slideToRightAnimation {
+            from {
+                transform: translateX(0, 0);
+            }
+
+            to {
+                transform: translate(100vw, -50%) scale(0.01);                 
+            }
         }
     </style>
 </head>
@@ -407,25 +438,50 @@
 
     <script>
         function hideModal() {
-            /* document.querySelector("#transparentBg").style.display = "none";
-            document.querySelector("#modalPhoto").style.display = "none"; */
+            document.querySelector(".modalPhoto").classList.add("slideToRight");
+            const box = document.querySelector(".transparentBg");
+            box.style.display = "block";
+            let opacity = 0.8;
+            const duration = 500;
+            const interval = 50;
+            const step = interval / duration * 0.8;
+
+            const fadeOut = setInterval(() => {
+                opacity -= step;
+                if (opacity <= 0) {
+                    opacity = 0;
+                    document.querySelector(".transparentBg").style.display = "none";
+                    document.querySelector(".modalPhoto").style.display = "none";
+                    document.querySelector(".modalPhoto").classList.remove("slideToRight");
+                    document.querySelector(".modalPhoto").classList.remove("slideFromRight");
+                    clearInterval(fadeOut);
+                }
+                box.style.opacity = opacity;
+            }, interval);
+
+
         }
 
-        let bgOpacity = 0.1;
         function displayModal() {
-            document.querySelector(".transparentBg").classList.add("displayBG");
-           
-            
-            let x = setInterval(() => {
-                bgOpacity += 0.9;
-                document.querySelector(".transparentBg").style.opacity = bgOpacity.toString();
-                console.log(document.querySelector(".transparentBg").style.opacity);
-                if(bgOpacity >= 0.8) {
-                    clearInterval(x);
+
+            const box = document.querySelector(".transparentBg");
+            box.style.display = "block";
+            let opacity = 0;
+            const duration = 500;
+            const interval = 50;
+            const step = interval / duration * 0.8;
+
+            const fadeOut = setInterval(() => {
+                opacity += step;
+                if (opacity >= 0.8) {
+                    opacity = 0.8;
+                    document.querySelector(".modalPhoto").style.display = "block";
+                    document.querySelector(".modalPhoto").classList.add("slideFromRight");
+                    clearInterval(fadeOut);
                 }
-            }, 100);
-            /* document.querySelector("#transparentBg").style.display = "block";
-            document.querySelector("#modalPhoto").style.display = "block"; */
+                box.style.opacity = opacity;
+            }, interval);
+
         }
     </script>
 </body>
