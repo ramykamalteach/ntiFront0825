@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        fetch("https://restcountries.com/v3.1/lang/arabic", {
+            method: 'get',   // post get put delete
+            headers: {
+                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+            }
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (json) {
+                for(let i = 0; i < json.length; i++) {
+                    let commonName = json[i].name.common;
+                    let country = document.createElement("h1");
+                    country.innerHTML = commonName;
+                    document.body.append(country);
+                }
+            })
+            .catch(function (error) {
+                console.log('Request failed', error);
+            });
+    </script>
+</body>
+
+</html>

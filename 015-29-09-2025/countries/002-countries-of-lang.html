@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="002-styles.css">
+</head>
+
+<body>
+    <nav>
+        <a href="001-home.html">Home</a>
+        <a href="002-countries-of-lang.html?lang=english">English</a>
+        <a href="002-countries-of-lang.html?lang=arabic">Arabic</a>
+        <a href="002-countries-of-lang.html?lang=french">french</a>
+        <a href="002-countries-of-lang.html?lang=spanish">Spanish</a>
+    </nav>
+    <h1>
+        Countries which speak <span id="lang"></span> are <span id="count"></span> Country(ies)
+    </h1>
+
+    <div id="countries">
+
+    </div>
+
+    <script>
+        const queryString = window.location.search; // Returns "?name=John&age=30
+        const urlParams = new URLSearchParams(queryString);
+
+        const lang = urlParams.get('lang');
+
+        fetch(`https://restcountries.com/v3.1/lang/${lang}`, {
+            method: 'get',   // post get put delete
+            headers: {
+                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+            }
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (json) {
+                document.querySelector("#lang").innerHTML = lang;
+                document.querySelector("#count").innerHTML = json.length;
+
+                for (let i = 0; i < json.length; i++) {
+                    let commonName = json[i].name.common;
+                    let link = document.createElement("a");
+                    link.href = "003-oneCountry.html?countryName=" + commonName;
+                    let flag = document.createElement("img");
+                    flag.src = json[i].flags.svg;
+                    flag.style.maxWidth = "70%";
+                    let countryName = document.createElement("h3");
+                    countryName.innerHTML = commonName;
+
+                    link.append(flag);
+                    link.append(countryName);
+                    link.style.animationDelay = i * 0.5 + "s";
+                    
+                    document.querySelector("#countries").append(link);
+                }
+            })
+            .catch(function (error) {
+                console.log('Request failed', error);
+            });
+    </script>
+</body>
+
+</html>

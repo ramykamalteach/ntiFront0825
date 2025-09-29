@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="001-home.html">Home</a>
+        <a href="002-countries-of-lang.html?lang=english">English</a>
+        <a href="002-countries-of-lang.html?lang=arabic">Arabic</a>
+        <a href="002-countries-of-lang.html?lang=french">french</a>
+        <a href="002-countries-of-lang.html?lang=spanish">Spanish</a>
+    </nav>
+
+    <img src="" alt="" id="flag" width="20%">
+
+    <h2>
+        Country Name <span id="countryName"></span>
+    </h2>
+    <h2>
+        Country Area <span id="countryArea"></span>
+    </h2>
+    <h2>
+        Country Population <span id="countryPopulation"></span>
+    </h2>
+
+    <script>
+        const queryString = window.location.search; // Returns "?name=John&age=30
+        const urlParams = new URLSearchParams(queryString);
+
+        const countryName = urlParams.get('countryName');
+
+        fetch(`https://restcountries.com/v3.1/name/${countryName}`, {
+            method: 'get',   // post get put delete
+            headers: {
+                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+            }
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (json) {
+                document.querySelector("#countryName").innerHTML = json[0].name.common;
+                document.querySelector("#countryArea").innerHTML = json[0].area;
+                document.querySelector("#countryPopulation").innerHTML = json[0].population;
+
+                document.querySelector("#flag").setAttribute("src", json[0].flags.svg);
+
+                
+            })
+            .catch(function (error) {
+                console.log('Request failed', error);
+            });
+    </script>
+</body>
+</html>
