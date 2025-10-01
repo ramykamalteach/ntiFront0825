@@ -1,0 +1,16 @@
+1- Gallery in pato resturant in footer with its model
+
+2- Form to Create new movie with (title - year - actors - types)
+    - actors : 
+        - write actor name in input
+        - click add actor button
+        - input cleared
+        - actor name appears in a rectangle under input with delete sign
+    - movie types :
+        - movie types a select menu
+        - user select the type and click add type button
+        - type appears in a rectangle under select menu with delete sign
+    - all data must be submitted
+
+till : 5:30pm
+

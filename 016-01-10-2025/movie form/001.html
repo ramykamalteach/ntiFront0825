@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Movie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f8fa;
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 8px 12px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .chips-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .chip {
+            background-color: #e1ecf4;
+            color: #0366d6;
+            padding: 6px 10px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .chip span {
+            margin-left: 6px;
+            cursor: pointer;
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Create New Movie</h2>
+
+    <form id="movieForm">
+        <!-- Title -->
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <!-- Year -->
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" required>
+
+        <!-- Actors -->
+        <label for="actorInput">Actors:</label>
+        <div style="display:flex; gap:10px;">
+            <input type="text" id="actorInput" placeholder="Enter actor name">
+            <button type="button" id="addActorBtn">Add Actor</button>
+        </div>
+        <div class="chips-container" id="actorsList"></div>
+
+        <!-- Movie Types -->
+        <label for="typeSelect">Movie Types:</label>
+        <div style="display:flex; gap:10px;">
+            <select id="typeSelect">
+                <option value="">-- Select Type --</option>
+                <option>Action</option>
+                <option>Comedy</option>
+                <option>Drama</option>
+                <option>Horror</option>
+                <option>Sci-Fi</option>
+                <option>Romance</option>
+            </select>
+            <button type="button" id="addTypeBtn">Add Type</button>
+        </div>
+        <div class="chips-container" id="typesList"></div>
+
+        <!-- Hidden arrays -->
+        <div id="hiddenFields"></div>
+
+        <button type="submit" class="submit-btn">Submit Movie</button>
+    </form>
+
+    <script>
+        const actorInput = document.getElementById('actorInput');
+        const addActorBtn = document.getElementById('addActorBtn');
+        const actorsList = document.getElementById('actorsList');
+
+        const typeSelect = document.getElementById('typeSelect');
+        const addTypeBtn = document.getElementById('addTypeBtn');
+        const typesList = document.getElementById('typesList');
+
+        const hiddenFields = document.getElementById('hiddenFields');
+
+        let actors = [];
+        let types = [];
+
+        // Add Actor
+        function addActor() {
+            const name = actorInput.value.trim();
+            if (name && !actors.includes(name)) {
+                actors.push(name);
+                actorInput.value = '';
+                renderActors();
+                updateHiddenFields();
+            }
+        }
+
+        // Add Type
+        function addType() {
+            const type = typeSelect.value;
+            if (type && !types.includes(type)) {
+                types.push(type);
+                typeSelect.value = '';
+                renderTypes();
+                updateHiddenFields();
+            }
+        }
+
+        addActorBtn.addEventListener('click', addActor);
+        addTypeBtn.addEventListener('click', addType);
+
+        // ✅ Add actor by pressing Enter
+        actorInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // prevent form submission
+                addActor();
+            }
+        });
+
+        // Render actors chips
+        function renderActors() {
+            actorsList.innerHTML = '';
+            actors.forEach((actor, index) => {
+                const chip = document.createElement('div');
+                chip.className = 'chip';
+                chip.innerHTML = `${actor} <span onclick="removeActor(${index})">✖</span>`;
+                actorsList.appendChild(chip);
+            });
+        }
+
+        // Render types chips
+        function renderTypes() {
+            typesList.innerHTML = '';
+            types.forEach((type, index) => {
+                const chip = document.createElement('div');
+                chip.className = 'chip';
+                chip.innerHTML = `${type} <span onclick="removeType(${index})">✖</span>`;
+                typesList.appendChild(chip);
+            });
+        }
+
+        // Remove actor
+        function removeActor(index) {
+            actors.splice(index, 1);
+            renderActors();
+            updateHiddenFields();
+        }
+
+        // Remove type
+        function removeType(index) {
+            types.splice(index, 1);
+            renderTypes();
+            updateHiddenFields();
+        }
+
+        // Update hidden inputs
+        function updateHiddenFields() {
+            hiddenFields.innerHTML = '';
+            actors.forEach(actor => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'actors[]';
+                input.value = actor;
+                hiddenFields.appendChild(input);
+            });
+
+            types.forEach(type => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'types[]';
+                input.value = type;
+                hiddenFields.appendChild(input);
+            });
+        }
+
+        // Handle form submit
+        document.getElementById('movieForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+
+            document.getElementById('movieForm').submit();
+
+
+
+            /* const formData = new FormData(e.target);
+            const movieData = Object.fromEntries(formData.entries());
+
+            movieData.actors = formData.getAll('actors[]');
+            movieData.types = formData.getAll('types[]');
+
+            console.log('Movie Data:', movieData);
+            alert('Movie submitted! Check console for details.'); */
+        });
+
+        // Expose remove functions globally
+        window.removeActor = removeActor;
+        window.removeType = removeType;
+    </script>
+
+</body>
+
+</html>
