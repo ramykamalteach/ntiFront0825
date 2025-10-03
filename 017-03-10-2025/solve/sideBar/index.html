@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Toggle</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --ui-bg: #111827;
+      --ui-fg: #ffffff;
+      --ui-accent: #2563eb;
+      --radius: 12px;
+      --gap: 12px;
+    }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: #0b1220;
+      color: var(--ui-fg);
+      min-height: 100vh;
+    }
+
+    /* Toggle Button */
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: linear-gradient(135deg, #1f2937, #0f172a);
+      color: #e5e7eb;
+      border: 1px solid #374151;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+      transition: transform .15s ease, background .3s ease, box-shadow .3s ease;
+      z-index: 999;
+    }
+    .toggle-btn:hover { transform: translateY(-1px); box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
+    .toggle-btn i { color: #93c5fd; }
+    .toggle-btn .label { font-weight: 600; letter-spacing: .5px; }
+
+    /* Mirror the toggle button in RTL */
+    html[dir="rtl"] .toggle-btn { right: auto; left: 20px; }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0; /* default LTR: stick to left */
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap);
+      transition: left .3s ease, right .3s ease;
+    }
+
+    /* RTL: stick to right */
+    html[dir="rtl"] .sidebar { left: auto; right: 0; }
+
+    .sidebar a {
+      position: relative;
+      width: 52px;
+      height: 52px;
+      background: #111827;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* LTR default */
+      border-radius: var(--radius);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      overflow: hidden;
+      padding-left: 16px; /* LTR padding */
+      box-sizing: border-box;
+      border: 1px solid #1f2937;
+    }
+
+    .sidebar a i {
+      font-size: 20px;
+      min-width: 20px;
+      text-align: center;
+      margin-right: 10px; /* LTR spacing */
+    }
+
+    /* Hide label until hover */
+    .sidebar a span {
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.3s ease;
+      font-weight: 600;
+    }
+
+    /* Expand on hover to reveal label */
+    .sidebar a:hover { width: 190px; }
+    .sidebar a:hover span { opacity: 1; }
+
+    /* RTL mirroring for item content */
+    html[dir="rtl"] .sidebar a { justify-content: flex-end; padding-left: 0; padding-right: 16px; }
+    html[dir="rtl"] .sidebar a i { margin-right: 0; margin-left: 10px; }
+
+    /* RTL: keep icon fixed on hover by anchoring it to the right */
+    html[dir="rtl"] .sidebar a { position: relative; padding-right: 46px; }
+    html[dir="rtl"] .sidebar a i { position: absolute; right: 16px; margin: 0; }
+    /* In Arabic: keep icon visible; hide label until hover */
+    html[dir="rtl"] .sidebar a span { display: none; opacity: 0; }
+    html[dir="rtl"] .sidebar a:hover span { display: inline; opacity: 1; }
+
+    /* Brand colors */
+    .facebook { background: #3b5998 !important; }
+    .twitter { background: #1da1f2 !important; }
+    .instagram { background: #e1306c !important; }
+    .linkedin { background: #0077b5 !important; }
+    .youtube { background: #ff0000 !important; }
+  </style>
+</head>
+<body>
+
+  <!-- Toggle Button -->
+  <button class="toggle-btn" id="langToggle" aria-label="Toggle English/Arabic">
+    <i class="fa-solid fa-language" aria-hidden="true"></i>
+    <span class="label">EN</span>
+  </button>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+    <a href="#" class="twitter"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+    <a href="#" class="instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+    <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+    <a href="#" class="youtube"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+  </div>
+
+  <script>
+    (function() {
+      const btn = document.getElementById('langToggle');
+
+      function applyLang(lang) {
+        const isRTL = lang === 'ar';
+        document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+        document.documentElement.setAttribute('lang', isRTL ? 'ar' : 'en');
+        const label = btn.querySelector('.label');
+        if (label) label.textContent = isRTL ? 'AR' : 'EN';
+      }
+
+      // Initialize from localStorage or default to LTR/EN
+      const saved = localStorage.getItem('lang') || 'en';
+      applyLang(saved);
+
+      btn.addEventListener('click', function() {
+        const next = document.documentElement.getAttribute('dir') === 'rtl' ? 'en' : 'ar';
+        applyLang(next);
+        localStorage.setItem('lang', next);
+      });
+    })();
+  </script>
+
+</body>
+</html>

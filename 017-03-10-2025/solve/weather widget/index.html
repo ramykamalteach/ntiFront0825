@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Widget</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="widget">
+        <header class="widget__header">
+          <h1 class="widget__title"><i class="fa-solid fa-cloud-sun"></i> Weather</h1>
+          <div style="display:flex; gap:8px; align-items:center;">
+            <button id="keyBtn" class="icon-btn" title="Set API key" aria-label="Set API key">
+              <i class="fa-solid fa-key"></i>
+            </button>
+            <button id="themeToggle" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </div>
+        </header>
+
+        <form id="searchForm" class="search">
+          <div class="input-group">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              id="cityInput"
+              type="text"
+              placeholder="Search city (e.g., London)"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <button class="btn" type="submit">Search</button>
+        </form>
+
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+
+        <section id="result" class="result hidden">
+          <div class="result__top">
+            <div class="result__place">
+              <h2 id="cityName">—</h2>
+              <p id="conditionText" class="muted">—</p>
+            </div>
+            <div class="result__temp">
+              <img id="iconImg" src="" alt="" class="weather-icon" />
+              <div>
+                <div id="tempValue" class="temp">—°</div>
+                <div id="feelsLike" class="muted small">Feels like —°</div>
+              </div>
+            </div>
+          </div>
+          <div class="result__meta">
+            <div class="meta-item">
+              <i class="fa-solid fa-droplet"></i><span id="humidity">—%</span>
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-wind"></i><span id="wind">— m/s</span>
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-compass"></i
+              ><span id="pressure">— hPa</span>
+            </div>
+          </div>
+        </section>
+
+        <footer class="widget__footer">
+          <span class="muted small">Data by OpenWeatherMap</span>
+        </footer>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

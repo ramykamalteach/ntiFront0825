@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipping Cards</title>
+  <!-- Google Fonts: Courgette used by .tit2 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      width: 100%;
+      margin-top: 100px;
+    }
+
+    .card {
+      width: 100%;
+      height: 340px;
+      perspective: 1000px; /* 3D space */
+
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+    /* Also flip on keyboard focus and when toggled via JS */
+    .card:focus-visible .card-inner,
+    .card:focus-within .card-inner,
+    .card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    /* Front face */
+    .card-front img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-front h3 {
+      margin: 12px;
+      font-size: 1.2rem;
+      color: #1e293b;
+    }
+    .card-front {
+      background: #fff;
+    }
+
+    /* Back face */
+    .card-back {
+      background: #f3d0d1;
+      color: white;
+      transform: rotateY(180deg);
+      padding: 5px;
+      text-align: left;
+      text-align: center;
+    }
+    /* Utility */
+    .text-center { text-align: center; }
+    .card-back h4 {
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+    }
+    .card-back p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    .card-back h3 {
+        font-size: 40px;
+    }
+    .tit2{
+        font-family: Courgette;
+        font-size: 30px;
+         line-height: 1.2;
+         text-align: center;
+         padding-top: 16px;
+    }
+    .card-back a{
+        text-decoration: none;
+        color: #1e293b;
+        font-weight: bolder;
+    }
+  </style>
+</head>
+<body>
+  <div class="card-grid pt-5 ">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="images/booking-03.jpg" alt="Paris">
+          <h3 class="tit2">Our Story</h3>
+        </div>
+        <div class="card-face card-back text-center">
+          <h4 class="tit2">Our Story</h4>
+          <h3>Hello</h3>
+          <p>Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia, nisl ante egestas mi, ac facilisis ligula sem id neque..</p>
+          <a href="#"> OUR STORY</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="images/booking-02.jpg" alt="Mountains">
+          <h3 class="tit2">Our Menu</h3>
+        </div>
+        <div class="card-face card-back">
+         <h4 class="tit2">Our Menu</h4>
+          <h3>Hello</h3>
+          <p>Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia, nisl ante egestas mi, ac facilisis ligula sem id neque..</p>
+          <a href="#"> OUR STORY</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="images/booking-01.jpg" alt="Food Tour">
+          <h3 class="tit2">Phasellus lorem </h3>
+        </div>
+        <div class="card-face card-back">
+          <h4 class="tit2">Phasellus lorem</h4>
+          <h3>Hello</h3>
+          <p>Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia, nisl ante egestas mi, ac facilisis ligula sem id neque..</p>
+          <a href="#"> OUR STORY</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable click/touch and keyboard toggle for flip
+    document.addEventListener('DOMContentLoaded', function () {
+      var cards = document.querySelectorAll('.card');
+      cards.forEach(function(card){
+        // make focusable if not already
+        if (!card.hasAttribute('tabindex')) {
+          card.setAttribute('tabindex','0');
+        }
+        card.addEventListener('click', function(){
+          card.classList.toggle('flipped');
+        });
+        card.addEventListener('keydown', function(e){
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.classList.toggle('flipped');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
