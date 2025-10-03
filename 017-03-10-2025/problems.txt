@@ -1,0 +1,16 @@
+problem 1 :
+    Build a weather widget:
+        - Input a city name.
+        - Fetch current weather data from OpenWeatherMap API.
+        - Display city, temperature, and weather condition (e.g., Sunny, Rainy).
+        - Save the last searched city in localStorage and load it when the page is refreshed.
+        - pretty format and good icons
+
+problem 2 :
+    - Build a set of cards that flip on hover to show more details.
+    - Use 3D CSS transforms (rotateY) for the flip effect.
+
+problem 3 :
+        - in image sidebar.jpg
+        - The sidebar is fixed on the left side of the page.
+        - add to page English/Arabic Toggle button that affects the sidebar position.
